@@ -1,0 +1,304 @@
+# ============================================================
+# Firefly 博客 - Decap CMS 配置文件
+# 将此文件放在 public/admin/config.yml
+# 文档：https://decapcms.org/docs/configuration-options/
+# ============================================================
+
+backend:
+  name: github
+  # ⚠️ 替换为你的 GitHub 仓库，格式：用户名/仓库名
+  repo: your-username/Firefly
+  # 仓库默认分支（通常是 main 或 master）
+  branch: main
+  # ⚠️ OAuth 代理地址，替换为你自己部署的 OAuth 代理
+  # 方案A：使用公共代理（不推荐生产环境）
+  # base_url: https://oauth-proxy.example.com
+  # 方案B：自建 Cloudflare Worker（推荐，见部署文档）
+  base_url: https://your-oauth-worker.your-subdomain.workers.dev
+  # 可选：API 分支（用于提交内容的分支，不填则用 branch）
+  # api_branch: main
+
+# 媒体文件上传配置
+# 上传的图片会保存到 public/uploads/，前端访问路径为 /uploads/
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# 站点 URL（用于生成预览链接，可选）
+site_url: https://your-blog-domain.pages.dev
+
+# 显示在 CMS 顶部的站点名称
+display_url: https://your-blog-domain.pages.dev
+
+# 编辑器配置
+editor:
+  # 启用预览窗格
+  preview: true
+
+# ============================================================
+# Collections - 内容集合定义
+# ============================================================
+collections:
+  # ----------------------------------------------------------
+  # 1. 博客文章 (posts)
+  # ----------------------------------------------------------
+  - name: "posts"
+    label: "博客文章"
+    label_singular: "文章"
+    description: "创建和管理博客文章"
+    folder: "src/content/posts"
+    create: true
+    delete: true
+    # 支持 md 和 mdx 格式
+    extension: "md"
+    format: "frontmatter"
+    # 文件名 slug 规则：使用标题的拼音/英文
+    slug: "{{slug}}"
+    # 预览路径
+    preview_path: "posts/{{slug}}"
+    # 文章排序字段
+    identifier_field: "title"
+    # 字段定义 - 精确对应 Firefly src/content.config.ts 中的 PostData schema
+    fields:
+      # ---- 基础信息 ----
+      - { label: "标题", name: "title", widget: "string", required: true }
+      - {
+          label: "发布日期",
+          name: "published",
+          widget: "datetime",
+          required: true,
+          default: "",
+          format: "YYYY-MM-DD",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          hint: "文章发布日期，格式如 2024-01-15",
+        }
+      - {
+          label: "更新日期",
+          name: "updated",
+          widget: "datetime",
+          required: false,
+          format: "YYYY-MM-DD",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          hint: "文章最后更新日期（可选）",
+        }
+      - {
+          label: "摘要",
+          name: "description",
+          widget: "text",
+          required: false,
+          default: "",
+          hint: "文章摘要，显示在文章列表和 SEO 中",
+        }
+
+      # ---- 分类与标签 ----
+      - {
+          label: "分类",
+          name: "category",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "文章分类，如：技术、生活、随笔",
+        }
+      - {
+          label: "标签",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: [],
+          hint: "文章标签，多个标签用回车分隔",
+        }
+
+      # ---- 封面与语言 ----
+      - {
+          label: "封面图",
+          name: "image",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "封面图路径，支持相对路径（如 ./images/cover.avif）或 /uploads/xxx.jpg",
+        }
+      - {
+          label: "语言",
+          name: "lang",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "文章语言代码，如 zh_CN、en，留空则使用站点默认语言",
+        }
+
+      # ---- 状态控制 ----
+      - {
+          label: "置顶",
+          name: "pinned",
+          widget: "boolean",
+          required: false,
+          default: false,
+          hint: "开启后文章将置顶显示",
+        }
+      - {
+          label: "草稿",
+          name: "draft",
+          widget: "boolean",
+          required: false,
+          default: false,
+          hint: "开启后文章为草稿状态，不会对访客显示",
+        }
+      - {
+          label: "允许评论",
+          name: "comment",
+          widget: "boolean",
+          required: false,
+          default: true,
+          hint: "是否允许在文章底部显示评论区",
+        }
+
+      # ---- 作者与来源 ----
+      - {
+          label: "作者",
+          name: "author",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "文章作者名称，留空则使用站点默认作者",
+        }
+      - {
+          label: "原文链接",
+          name: "sourceLink",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "转载文章的原文链接（可选）",
+        }
+
+      # ---- 版权信息 ----
+      - {
+          label: "版权名称",
+          name: "licenseName",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "自定义版权协议名称，如 CC BY-NC-SA 4.0",
+        }
+      - {
+          label: "版权链接",
+          name: "licenseUrl",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "版权协议详情链接",
+        }
+
+      # ---- 文章加密 ----
+      - {
+          label: "访问密码",
+          name: "password",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "设置后文章将被加密，访客需输入密码才能查看（留空表示不加密）",
+        }
+      - {
+          label: "密码提示",
+          name: "passwordHint",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "密码提示信息，显示在密码输入框下方",
+        }
+
+      # ---- 正文 ----
+      - {
+          label: "正文内容",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          hint: "支持 Markdown 语法、代码块、公式、流程图等",
+        }
+
+  # ----------------------------------------------------------
+  # 2. 动态 / 说说 (dynamic)
+  # ----------------------------------------------------------
+  - name: "dynamic"
+    label: "动态说说"
+    label_singular: "动态"
+    description: "发布短动态、说说、碎碎念"
+    folder: "src/content/dynamic"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    # 动态文件名格式：YYYY-MM-DD-HHMMSS.md
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    identifier_field: "published"
+    fields:
+      - {
+          label: "发布时间",
+          name: "published",
+          widget: "datetime",
+          required: true,
+          default: "",
+          format: "YYYY-MM-DD HH:mm:ss",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm:ss",
+          hint: "动态发布时间",
+        }
+      - {
+          label: "置顶",
+          name: "pinned",
+          widget: "boolean",
+          required: false,
+          default: false,
+          hint: "开启后该动态将置顶显示",
+        }
+      - {
+          label: "位置",
+          name: "location",
+          widget: "string",
+          required: false,
+          default: "",
+          hint: "发布位置信息（可选）",
+        }
+      - {
+          label: "动态内容",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          hint: "支持文字、图片、表情",
+        }
+
+  # ----------------------------------------------------------
+  # 3. 特殊页面 (spec) - 关于、友链、留言板等
+  # ----------------------------------------------------------
+  - name: "spec"
+    label: "特殊页面"
+    label_singular: "页面"
+    description: "关于页、友链页、留言板等特殊页面"
+    folder: "src/content/spec"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    identifier_field: "title"
+    fields:
+      - {
+          label: "页面标题",
+          name: "title",
+          widget: "string",
+          required: false,
+          default: "",
+        }
+      - {
+          label: "页面描述",
+          name: "description",
+          widget: "text",
+          required: false,
+          default: "",
+        }
+      - {
+          label: "页面内容",
+          name: "body",
+          widget: "markdown",
+          required: true,
+        }
