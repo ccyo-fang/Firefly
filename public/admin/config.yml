@@ -14,7 +14,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "文章标题", name: "title", widget: "string" }
-      - { label: "发布日期", name: "published", widget: "datetime" }
+      - { label: "发布日期", name: "published", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "文章描述", name: "description", widget: "text" }
       - { label: "封面图", name: "image", widget: "image", required: false }
       - { label: "标签", name: "tags", widget: "list", default: [] }
