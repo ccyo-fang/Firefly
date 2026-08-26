@@ -14,7 +14,7 @@ backend:
   # 方案A：使用公共代理（不推荐生产环境）
   # base_url: https://oauth-proxy.example.com
   # 方案B：自建 Cloudflare Worker（推荐，见部署文档）
-  base_url: https://holy-resonance-8f7a.1419797588.workers.dev
+  base_url: https://holy-resonance-8f7a.1419797588.workers.dev/auth
   # 可选：API 分支（用于提交内容的分支，不填则用 branch）
   # api_branch: main
 
@@ -24,10 +24,10 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 # 站点 URL（用于生成预览链接，可选）
-site_url: https://ccyes.cyou
+site_url: ccyes.cyou
 
 # 显示在 CMS 顶部的站点名称
-display_url: https://ccyes.cyou
+display_url: ccyes.cyou
 
 # 编辑器配置
 editor:
