@@ -9,10 +9,18 @@ public_folder: "/images"             # 网站前端访问图片的路径
 collections:
   - name: "posts"
     label: "博客文章"
-    folder: "src/content/posts"      # Firefly 文章存放目录，可根据实际路径调整
+    folder: "src/content/posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}"  # 这行你已经有了，保留不动
     fields:
+      # ====== 新增：URL 别名字段 ======
+      - { 
+          label: "URL 别名", 
+          name: "slug", 
+          widget: "string",
+          hint: "英文/拼音，例如 ce-shi-bo-ke，最终网址为 /posts/别名/"
+        }
+      # ==============================
       - { label: "文章标题", name: "title", widget: "string" }
       - { label: "发布日期", name: "published", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "文章描述", name: "description", widget: "text" }
