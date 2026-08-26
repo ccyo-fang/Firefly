@@ -1,22 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Decap CMS</title>
-  <!-- 🔧 OAuth hash丢失修复脚本 -->
-  <script>
-(function(){
-  const url = new URL(location.href);
-  const token = url.searchParams.get('access_token');
-  if(token){
-    url.searchParams.delete('access_token');
-    location.replace(url.origin + url.pathname + "#/oauth/callback?access_token=" + token);
-  }
-})();
-  </script>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@3.4.0/dist/decap-cms.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firefly 博客管理后台</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+  </body>
 </html>
