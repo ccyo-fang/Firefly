@@ -14,7 +14,7 @@ backend:
   # 方案A：使用公共代理（不推荐生产环境）
   # base_url: https://oauth-proxy.example.com
   # 方案B：自建 Cloudflare Worker（推荐，见部署文档）
-  base_url: https://holy-resonance-8f7a.1419797588.workers.dev/auth
+  base_url: https://holy-resonance-8f7a.1419797588.workers.dev
   # 可选：API 分支（用于提交内容的分支，不填则用 branch）
   # api_branch: main
 
