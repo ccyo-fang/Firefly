@@ -1,6 +1,6 @@
 ---
 title: Markdown PlantUML 图表
-published: 2026-08-26T12:35
+published: 2026-08-26
 description: 用于验证 Firefly 中 PlantUML 插件渲染、主题切换与交互能力的示例文章。
 image: ''
 tags:
