@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: ccyo-fang/Firefly  # 例如：CuteLeaf/Firefly
-  branch: main                       # 你的仓库默认分支
+  branch: master                       # 你的仓库默认分支
 
 media_folder: "public/images"        # 图片上传后存放的本地路径
 public_folder: "/images"             # 网站前端访问图片的路径
