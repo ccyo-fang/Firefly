@@ -45,9 +45,8 @@ for (const post of posts) {
 	}
 }
 
-// 使用第一条文章的发布时间作为站点开始时间
-const firstPost = posts.length > 0 ? posts[posts.length - 1] : null;
-const siteStartDate = firstPost?.data.published ? `${firstPost.data.published}T00:00:00` : "2025-01-01T00:00:00";
+// 使用固定的站点开始时间：2026-09-01
+const siteStartDate = "2026-09-01T00:00:00";
 
 // 格式化数字（添加千位分隔符）
 function formatNumber(num: number): string {
