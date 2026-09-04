@@ -21,9 +21,6 @@ const { class: className, style, widgetConfig } = Astro.props;
 
 const showTitle = widgetConfig?.showTitle !== false;
 
-// 从配置中获取站点开始日期
-const siteStartDate = siteConfig.siteStartDate || "2025-01-01";
-
 // 获取所有文章
 const posts = await getSortedPosts();
 const categories = await getCategoryList();
@@ -47,6 +44,10 @@ for (const post of posts) {
 		totalWords += chineseChars.length + englishChars.length;
 	}
 }
+
+// 使用第一条文章的发布时间作为站点开始时间
+const firstPost = posts.length > 0 ? posts[posts.length - 1] : null;
+const siteStartDate = firstPost?.data.published ? `${firstPost.data.published}T00:00:00` : "2025-01-01T00:00:00";
 
 // 格式化数字（添加千位分隔符）
 function formatNumber(num: number): string {
