@@ -40,10 +40,10 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "ccuo",
+	title: "ccyes",
 
 	// 站点副标题
-	subtitle: "谁措",
+	subtitle: "yes",
 
 	// 站点 URL
 	site_url: "https://ccyes.cyou/",
@@ -63,6 +63,7 @@ export const siteConfig: SiteConfig = {
 		"静态博客",
 		"ccuo",
 		"谁措",
+		"ccyes",
 	],
 
 	// 主题色
