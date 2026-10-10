@@ -30,6 +30,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 			// 标签
 			LinkPresets.Tags,
+
+			// 系列
+			LinkPresets.Series,
 		],
 	});
 
@@ -117,6 +120,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:link-2-rounded",
 		pageKey: "friends",
 	},
+	Series: {
+		name: "系列",
+		url: "/series/",
+		icon: "material-symbols:layers",
+	},
 	Guestbook: {
 		name: "留言",
 		url: "/guestbook/",
@@ -128,6 +136,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/dynamic/",
 		icon: "material-symbols:forum-rounded",
 		pageKey: "dynamic",
+	},
+	Projects: {
+		name: "项目",
+		url: "/projects/",
+		icon: "material-symbols:rocket-launch",
+		pageKey: "projects",
 	},
 	Gallery: {
 		name: "相册",
