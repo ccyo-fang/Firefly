@@ -1,0 +1,33 @@
+name: 定时发布草稿文章
+
+on:
+  # 每天北京时间 08:00 和 20:00 各跑一次（UTC 00:00 / 12:00）
+  schedule:
+    - cron: '0 0,12 * * *'
+  # 也可以在 Actions 页面手动点「Run workflow」立即执行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 发布到期的草稿
+        run: python3 scripts/publish_due_drafts.py
+
+      - name: 提交改动
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "没有需要发布的文章，跳过提交。"
+          else
+            git add -A
+            git commit -m "chore: 定时发布到期的草稿文章"
+            git push
+          fi
