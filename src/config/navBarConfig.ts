@@ -33,19 +33,8 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-	//社交及其子菜单
-	links.push({
-		name: "社交",
-		url: "#",
-		icon: "material-symbols:group",
-		children: [
-			// 友链
-			LinkPresets.Friends,
-
-			// 留言
-			LinkPresets.Guestbook,
-		],
-	});
+	// 留言
+	links.push(LinkPresets.Guestbook);
 
 	// 我的及其子菜单
 	links.push({
@@ -53,6 +42,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		url: "#",
 		icon: "material-symbols:person",
 		children: [
+			// 友链
+			LinkPresets.Friends,
+
 			// 动态
 			LinkPresets.Dynamic,
 
