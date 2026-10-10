@@ -7,7 +7,7 @@ category: 折腾
 slug: move-out
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🏠 一开始是在平台上写的
 
