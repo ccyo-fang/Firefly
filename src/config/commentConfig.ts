@@ -64,7 +64,10 @@ export const commentConfig: CommentConfig = {
 		// 获取 Giscus 评论系统分类ID
 		categoryId: "DIC_kwDOUDZ_tc4DHdqf",
 		// 获取 Giscus 评论系统映射方式
-		mapping: "title",
+		// pathname：以页面 URL 路径作为主键（推荐）
+		//   文章 URL slug 不变，评论就永久稳定；
+		//   若改用 "title" 匹配，日后调整站点副标题会导致所有页面 title 变化、评论全部失联。
+		mapping: "pathname",
 		// 获取 Giscus 评论系统严格模式
 		strict: "0",
 		// 获取 Giscus 评论系统反应功能
