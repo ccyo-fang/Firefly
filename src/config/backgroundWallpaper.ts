@@ -4,7 +4,10 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 覆盖透明，"none" 纯色背景无壁纸
 	mode: "banner",
 	// 是否启用背景视频播放，配置后将在导航栏显示视频播放按钮
-	playerEnable: true,
+	// 【2026-10-10 暂时关闭】当前外链视频源 bed.twoleaf.cn 实测仅约 524 KB/s 且体积偏大，
+	// 首屏要等很久还可能提示"视频加载失败"。建议把视频压到 2MB 以内并托管到
+	// Cloudflare R2 / 自己的 CDN 后，把下面改回 true 即可恢复（playerUrl 已保留）。
+	playerEnable: false,
 	/**
 	 * 背景图片配置
 	 * 图片路径支持三种格式：
@@ -73,17 +76,17 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely ccyes!",
+			title: "你好，树洞",
 			// 主页横幅主标题字体大小
 			titleSize: "4.5rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"把想说的话，说给树洞听",
+				"深夜的心事，这里有回音",
+				"写下来的，就不算忘记",
+				"有些话，只说给树洞听",
+				"生活很吵，这里很安静",
+				"欢迎进来，坐一会儿",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",

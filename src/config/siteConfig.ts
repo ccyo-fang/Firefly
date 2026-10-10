@@ -40,30 +40,29 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "CC",
+	title: "树洞",
 
 	// 站点副标题
-	subtitle: "yes",
+	subtitle: "shudong",
 
 	// 站点 URL
 	site_url: "https://shudong.cyou/",
 
 	// 站点描述
 	description:
-		"shudong 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+		"树洞 · shudong —— 一个安静说话的地方。写技术，也写生活里的细碎光亮，记录那些不想说给谁听、却又想留下来的话。",
 
 	// 站点关键词
 	keywords: [
-		"shudong",
-		"Fuwari",
-		"Astro",
-		"ACGN",
-		"博客",
-		"技术博客",
-		"静态博客",
-		"ccuo",
-		"谁措",
 		"树洞",
+		"shudong",
+		"个人博客",
+		"生活记录",
+		"技术笔记",
+		"随笔",
+		"思考",
+		"静态博客",
+		"Astro",
 	],
 
 	// 主题色
@@ -91,12 +90,34 @@ export const siteConfig: SiteConfig = {
 	// 如果启用了OpenGraph图片功能，数组中需要包含png格式的favicon图标
 	favicon: [
 		{
-			// 图标文件路径
-			src: "/favicon/firefly-32.png",
-			// 可选，指定主题 'light' | 'dark'
-			// theme: "light",
-			// 可选，图标大小
-			// sizes: "32x32",
+			src: "/favicon/shudong-light-32.png",
+			theme: "light",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/shudong-dark-32.png",
+			theme: "dark",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/shudong-light-180.png",
+			theme: "light",
+			sizes: "180x180",
+		},
+		{
+			src: "/favicon/shudong-dark-180.png",
+			theme: "dark",
+			sizes: "180x180",
+		},
+		{
+			src: "/favicon/shudong-light-192.png",
+			theme: "light",
+			sizes: "192x192",
+		},
+		{
+			src: "/favicon/shudong-dark-192.png",
+			theme: "dark",
+			sizes: "192x192",
 		},
 	],
 
@@ -113,9 +134,9 @@ export const siteConfig: SiteConfig = {
 		// 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
 		logo: {
 			type: "image",
-			value: "assets/images/logo/firefly-light.png",
-			valueDark: "assets/images/logo/firefly-dark.png",
-			alt: "🍀",
+			value: "assets/images/logo/shudong-light.png",
+			valueDark: "assets/images/logo/shudong-dark.png",
+			alt: "树洞",
 		},
 		// 导航栏标题
 		title: "shudong",
@@ -130,7 +151,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	// 站点开始日期，用于统计运行天数
-	siteStartDate: "2025-01-01",
+	siteStartDate: "2026-09-01",
 
 	// 站点时区（IANA 时区字符串），用于格式化bangumi、rss里的构建日期时间等等..
 	// 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
