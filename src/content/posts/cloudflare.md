@@ -7,7 +7,7 @@ category: 技术
 slug: cloudflare
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## ☁️ 先说好的部分
 
