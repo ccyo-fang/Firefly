@@ -7,7 +7,7 @@ category: 生活
 slug: tidying
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🗑 起因
 
