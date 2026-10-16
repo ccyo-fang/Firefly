@@ -7,7 +7,7 @@ category: 思考
 slug: why-write
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## ❓ 一个很实在的问题
 
