@@ -7,7 +7,7 @@ category: 技术
 slug: favicon
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🍀 起因
 
