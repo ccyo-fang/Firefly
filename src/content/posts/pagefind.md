@@ -7,7 +7,7 @@ category: 技术
 slug: pagefind
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🔍 静态站的搜索难题
 
