@@ -7,7 +7,7 @@ category: 技术
 slug: astro-theme
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🍴 fork 之后
 
