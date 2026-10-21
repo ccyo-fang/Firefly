@@ -7,7 +7,7 @@ category: 随笔
 slug: playlist
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🎧 一个发现
 
