@@ -7,7 +7,7 @@ category: 思考
 slug: keep-going
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 📅 连续性的执念
 
