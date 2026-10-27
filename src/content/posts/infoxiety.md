@@ -7,7 +7,7 @@ category: 思考
 slug: infoxiety
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 📱 那个晚上
 
