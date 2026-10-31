@@ -7,7 +7,7 @@ category: 技术
 slug: git-commit
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 😖 看不懂的提交记录
 
