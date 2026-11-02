@@ -7,7 +7,7 @@ category: 思考
 slug: recording
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## ⏳ 一个假设
 
