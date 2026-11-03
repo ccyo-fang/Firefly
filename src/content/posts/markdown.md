@@ -7,7 +7,7 @@ category: 技术
 slug: markdown
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🗒 先用纯文本
 
