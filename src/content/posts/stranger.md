@@ -7,7 +7,7 @@ category: 随笔
 slug: stranger
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🏪 几句废话
 
