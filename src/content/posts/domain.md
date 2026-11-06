@@ -7,7 +7,7 @@ category: 技术
 slug: domain
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🏷 后缀不是小事
 
