@@ -7,7 +7,7 @@ category: 思考
 slug: being-seen
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 👀 一个矛盾
 
