@@ -7,7 +7,7 @@ category: 随笔
 slug: one-month
 pinned: false
 comment: true
-draft: true
+draft: false
 ---
 ## 🌳 一个月
 
